@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mini message dashboard</title>
+</head>
+<link rel="stylesheet" href="css/style.css">
+<body>
+
+  <a href="./form">ADD NEW</a>
+  <% message.forEach(m=>{%>
+    <li>
+      <%= m.text %>
+    </li>
+     <li>
+      <%= m.user %>
+    </li>
+     <li>
+      <%= m.added %>
+    </li>
+  <%}) %>
+</body>
+</html>
