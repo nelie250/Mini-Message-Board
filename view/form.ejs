@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>form</title>
+  <title>New Message</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<link rel="stylesheet" href="../public/css/style.css">
 <body>
-  <form method="POST" action="form/new">
-    <label for="author">Names</label>
-    <input type="text" name="author" id="author">
-    <label for="message">message</label>
-    <input type="text" name="message" id="message">
-
-    <button type="submit">Send</button>
+  <h1>New Message</h1>
+  <form method="POST" action="/new">
+    <label for="messageUser">User:</label>
+    <input type="text" id="messageUser" name="messageUser" required>
+    <br>
+    <label for="messageText">Message:</label>
+    <textarea id="messageText" name="messageText" required></textarea>
+    <br>
+    <button type="submit">Submit</button>
   </form>
 </body>
 </html>
