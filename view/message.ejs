@@ -4,13 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Message</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <h1>Message Details</h1>
-  <p><b>User:</b> <%= message.user %></p>
-  <p><b>Message:</b> <%= message.text %></p>
-  <p><b>Date:</b> <%= message.added.toDateString() %></p>
-  <a href="/">Back to board</a>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h1>Message Details</h1>
+      <a href="/">Back to Board</a>
+    </div>
+    <div class="single-message-container">
+        <div class="message odd">
+            <div class="message-bubble">
+                <div class="user"><%= message.user %></div>
+                <div class="text"><%= message.text %></div>
+                <div class="timestamp"><%= message.added.toLocaleString() %></div>
+            </div>
+        </div>
+    </div>
+  </div>
 </body>
 </html>

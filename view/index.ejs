@@ -4,19 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <h1><%= title %></h1>
-  <a href="/new">Add a new message</a>
-  <ul>
-    <% messages.forEach((message, index) => { %>
-      <li>
-        <p><b><%= message.user %>:</b> <%= message.text %></p>
-        <p><%= message.added.toDateString() %></p>
-        <a href="/message/<%= index %>">Open</a>
-      </li>
-    <% }) %>
-  </ul>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h1><%= title %></h1>
+      <a href="/new">New Message</a>
+    </div>
+    <div class="message-list">
+      <% messages.forEach((message, index) => { %>
+        <div class="message <%= index % 2 === 0 ? 'even' : 'odd' %>">
+          <div class="message-bubble">
+            <div class="user"><%= message.user %></div>
+            <div class="text"><%= message.text %></div>
+            <div class="timestamp"><%= message.added.toLocaleTimeString() %></div>
+            <a href="/message/<%= index %>" style="text-decoration: none; color: inherit; font-size: 0.7em; text-align: right; display: block; margin-top: 5px;">Open</a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
 </body>
 </html>
